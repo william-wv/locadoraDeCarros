@@ -1,14 +1,15 @@
 // Classes PO 
 
 export class Veiculo {
-  public disponivel: boolean = true;
+  private disponivel: boolean = true;
 
   constructor(
-    public placa: string,
-    public marca: string,
-    public modelo: string,
-    public ano: number,
-    public valorDiaria: number
+    private placa: string,
+    private marca: string,
+    private modelo: string,
+    private kilometragem: number,
+    private ano: number,
+    private valorDiaria: number
   ) {}
 
   //gets e sets
@@ -46,6 +47,21 @@ export class Veiculo {
   public setDiaria(valorDiaria:number):void {
     this.valorDiaria = valorDiaria
   }
+
+  public getKilometragem():number {
+    return this.kilometragem
+  }
+  public setKilometragem(kilometragem:number){
+    this.kilometragem = kilometragem
+  }
+
+  public getDisponivel():boolean{
+    return this.disponivel
+  }
+  public setDisponivel(disponivel:boolean){
+    this.disponivel = disponivel
+  }
+
 
   //funçoes
   alugar(): void {
