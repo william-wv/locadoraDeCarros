@@ -16,6 +16,7 @@ export default class Sale {
   public setCar(car: Carros) {
     this.car = car;
   }
+  
   public getClient(): Client {
     return this.client;
   }

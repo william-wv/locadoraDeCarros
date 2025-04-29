@@ -19,7 +19,7 @@ export default class Database {
     public listAllSales(): string {
         let s: string = "";
         for (let i = 0; i < this.sales.length; i++) {
-            const element = this.sales[i];
+            const element = this.sales[i];  
             s += "\n" + element.getCar().getModel();
             s += "\n" + element.getClient().getName();
         }
@@ -33,6 +33,5 @@ export default class Database {
             console.log("\n" + element.getModel() + "  " + element.getYear())
         }
     }
-
 
 }

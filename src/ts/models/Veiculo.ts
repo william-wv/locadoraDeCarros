@@ -47,7 +47,6 @@ export class Veiculo {
   public setDiaria(valorDiaria:number):void {
     this.valorDiaria = valorDiaria
   }
-
   public getKilometragem():number {
     return this.kilometragem
   }
@@ -61,7 +60,6 @@ export class Veiculo {
   public setDisponivel(disponivel:boolean){
     this.disponivel = disponivel
   }
-
 
   //funçoes
   alugar(): void {

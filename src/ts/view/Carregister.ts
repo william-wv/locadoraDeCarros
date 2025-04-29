@@ -8,26 +8,19 @@ export default class CarRegister {
     private prompt = PromptSync();
     private control: MainController;
 
-
     public constructor(control: MainController) {
-
         this.control = control;
-
     }
 
     public addCar() {
-        //precisamos de um carro
         let car: Car = this.control.getNewCar();
-        // pedir ao user os dados
+        // pedir ao user dos dados
         let model: string = this.prompt("\ndigite o modelo do carro");
         let year: number = parseInt(this.prompt("\ndigite o ano"));
-        // popular o objeto
+        // populando o objeto
         car.setYear(year);
         car.setModel(model);
-        //guardar o carro no banco
+        //guardando o carro no banco
         this.control.db.addNewCar(car);
-
     }
-
-
 }

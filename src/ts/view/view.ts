@@ -1,16 +1,14 @@
-import promptSync from 'prompt-sync';
-import Database from '../db/DataBase';
-import MainController from '../controller/controller';
-import CarRegister from './Carregister';
+import promptSync from "prompt-sync";
+import Database from "../db/DataBase";
+import MainController from "../controller/controller";
+import CarRegister from "./Carregister";
 
 export default class MainScreen {
-
     private prompt = promptSync();
     private control: MainController;
     private carRegister: CarRegister;
 
-    constructor(control: MainController){
-        
+    constructor(control: MainController) {
         this.control = control;
         this.carRegister = new CarRegister(control);
         this.mainMenu();
@@ -18,9 +16,11 @@ export default class MainScreen {
     public mainMenu(): void {
         let continues: boolean = true;
         while (continues) {
-
-
-            let choice = parseInt(this.prompt("Escolha:\n1. Cadastra Carro\n2. Cadastra Cliente\n3. Cadastra Venda\n4. Sair"));
+            let choice = parseInt(
+                this.prompt(
+                    "Escolha:\n1. Cadastra Carro\n2. Cadastra Cliente\n3. Cadastra Venda\n4. Sair"
+                )
+            );
             switch (choice) {
                 case 1:
                     //abrir tela cadastro carro
@@ -42,6 +42,4 @@ export default class MainScreen {
         }
         console.log("SAIU");
     }
-
-
 }

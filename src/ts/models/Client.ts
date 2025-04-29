@@ -1,10 +1,13 @@
-export default class Client {
-  private name!: string;
+import Pessoa from "./Pessoa";
 
-  public getName(): string {
-    return this.name;
+export default class Client extends Pessoa{
+  private carteiraTipo!: String
+
+  public getCarteiraTipo(): String {
+    return this.carteiraTipo;
   }
-  public setName(name: string): void {
-    this.name = name;
+  public setCarteiraTipo(carteiraTipo: string): void {
+    this.carteiraTipo = carteiraTipo;
   }
+
 }
