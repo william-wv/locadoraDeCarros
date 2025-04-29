@@ -1,12 +1,10 @@
 export default class Client {
-  private name!: string
-  private cpf!: string
+  private name!: string;
 
-
-  public getName():string{
-    return this.name
+  public getName(): string {
+    return this.name;
   }
-  public setName(name:string){
-    this.name = name
+  public setName(name: string): void {
+    this.name = name;
   }
-} 
+}
