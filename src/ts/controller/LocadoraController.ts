@@ -5,10 +5,18 @@ import { Cliente } from "../models/Cliente";
 export class LocadoraController {
   constructor(private service: LocadoraService) {}
 
-  adicionarCarro(placa: string, modelo: string, ano: number): void {
-    const carro = new Carro(placa, modelo, ano);
+ // LocadoraController.ts
+adicionarCarro(carro: Carro): void;
+adicionarCarro(placa: string, modelo: string, ano: number): void;
+adicionarCarro(param1: any, param2?: any, param3?: any): void {
+  if (param1 instanceof Carro) {
+    this.service.adicionarCarro(param1);
+  } else {
+    const carro = new Carro(param1, param2, param3);
     this.service.adicionarCarro(carro);
   }
+}
+
 
   adicionarCliente(nome: string, documento: string, carteira:string): void {
     const cliente = new Cliente(nome, documento , carteira);

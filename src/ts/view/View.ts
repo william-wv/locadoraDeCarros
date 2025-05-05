@@ -41,12 +41,13 @@ export class View {
               });
             });
             break;
-          case "3":
-            const carros = this.controller.listarDisponiveis();
-            console.log("\nCarros disponíveis:");
-            carros.forEach(c => console.log(`${c.modelo} - ${c.placa}`));
-            menu();
-            break;
+            case "3":
+              const carros = this.controller.listarDisponiveis();
+              console.log("\nCarros disponíveis:");
+              carros.forEach(c => console.log(c.toString())); // usa o método sobrescrito
+              menu();
+              break;
+            
           case "4":
             rl.question("Placa do carro para alugar: ", placa => {
               const alugado = this.controller.alugarCarro(placa);

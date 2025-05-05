@@ -10,26 +10,26 @@ export class LocadoraService {
   adicionarCliente(cliente: Cliente): void {
     Database.clientes.push(cliente);
   }
-
   listarCarrosDisponiveis(): Carro[] {
-    return Database.carros.filter(c => c.disponivel);
+    return Database.carros.filter(c => c.getDisponivel());
   }
-
+  
   alugarCarro(placa: string): boolean {
-    const carro = Database.carros.find(c => c.placa === placa && c.disponivel);
+    const carro = Database.carros.find(c => c.placa === placa && c.getDisponivel());
     if (carro) {
-      carro.disponivel = false;
+      carro.setDisponivel(false);
       return true;
     }
     return false;
   }
-
+  
   devolverCarro(placa: string): boolean {
-    const carro = Database.carros.find(c => c.placa === placa && !c.disponivel);
+    const carro = Database.carros.find(c => c.placa === placa && !c.getDisponivel());
     if (carro) {
-      carro.disponivel = true;
+      carro.setDisponivel(true);
       return true;
     }
     return false;
   }
+  
 }
