@@ -10,8 +10,8 @@ export class LocadoraController {
     this.service.adicionarCarro(carro);
   }
 
-  adicionarCliente(nome: string, documento: string): void {
-    const cliente = new Cliente(nome, documento);
+  adicionarCliente(nome: string, documento: string, carteira:string): void {
+    const cliente = new Cliente(nome, documento , carteira);
     this.service.adicionarCliente(cliente);
   }
 

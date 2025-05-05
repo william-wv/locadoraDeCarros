@@ -34,9 +34,10 @@ export class View {
           case "2":
             rl.question("Nome do cliente: ", nome => {
               rl.question("Documento: ", doc => {
-                this.controller.adicionarCliente(nome, doc);
-                console.log("Cliente adicionado.");
-                menu();
+                rl.question("Número da carteira de motorista: ", carteira => {
+                  this.controller.adicionarCliente(nome, doc, carteira);
+                  menu();
+                });
               });
             });
             break;
